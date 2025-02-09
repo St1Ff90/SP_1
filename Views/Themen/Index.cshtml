@@ -1,0 +1,137 @@
+﻿@model IEnumerable<SP.Models.Unterrichten.Thema>
+
+@{
+    ViewData["Title"] = "Deutsch";
+}
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container-fluid">
+    <div class="fairy-tale-text">
+        <div class="filter-container">
+            <!-- Фильтры -->
+            <div class="filter-group">
+                <label for="category">Категория:</label>
+                <select id="category" name="category">
+                    <option value="Wortschatz">Wortschatz</option>
+                    <option value="Grammatik">Grammatik</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="level">Уровень:</label>
+                <select id="level" name="level">
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="book">Книга:</label>
+                <select id="book" name="book">
+                    <option value="Book1">Книга 1</option>
+                    <option value="Book2">Книга 2</option>
+                    <option value="Book3">Книга 3</option>
+                </select>
+            </div>
+
+            <!-- Кнопки -->
+            <div class="filter-buttons">
+                <button type="submit" class="button-blue">Применить</button>
+                <button type="reset" class="button-green">Очистить</button>
+            </div>
+        </div>
+    </div>
+    @* <div class="table-responsive"> *@
+    <div>
+        @using (Html.BeginForm("Aufgaben", "Lehrer", FormMethod.Post))
+        {
+            <input type="hidden" id="vol" name="vol" value="" />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:100px;">
+                            @Html.DisplayNameFor(model => model.Bereich)
+                        </th>
+                        <th style="width: 50%;">
+                            
+                            @Html.DisplayNameFor(model => model.ThemaName)
+                        </th>
+                        
+                        <th style="width: 5%;">A1</th>
+                        <th style="width: 5%;">A2</th>
+                        <th style="width: 5%;">B1</th>
+                        <th style="width: 5%;">B2</th>
+                        <th style="width: 5%;">C1</th>
+                        <th style="width: 5%;">Ändern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Bereich)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ThemaName)
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bereich)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThemaName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bereich)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThemaName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+
+
+

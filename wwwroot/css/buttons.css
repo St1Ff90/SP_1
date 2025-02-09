@@ -1,0 +1,60 @@
+﻿
+.transparent-button {
+    background-color: rgba(0, 123, 255, 0.1); /* Прозрачный фон */
+    border: 1px solid #1c7343; /* Цвет бордера, чтобы кнопка была видимой */
+    color: #1c7343; /* Цвет текста кнопки */
+    padding: 10px 30px; /* Отступы для кнопки */
+    border-radius: 50px; /* Овальная форма кнопки */
+    font-weight: bold; /* Жирный текст */
+    font-size: 16px; /* Размер шрифта */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1); /* Эффект тени для объема */
+    transition: all 0.3s ease; /* Плавный переход */
+}
+/* Начало: кнопка хоум домик */
+.icon-button {
+    border: none; /* Убирает границы кнопки */
+    background: none; /* Делает фон прозрачным */
+    padding: 0; /* Убирает отступы */
+    cursor: pointer; /* Делает кнопку кликабельной */
+}
+
+    .icon-button img {
+        width: 40px; /* Размер иконки */
+        height: 40px;
+        object-fit: contain;
+    }
+/* Конец: кнопка хоум домик */
+
+    /* Эффект при наведении */
+    .transparent-button:hover {
+        box-shadow: 0 8px 16px rgba(128, 204, 204, 0.5); /* Увеличенная тень */
+    }
+
+    /* Эффект при нажатии */
+    .transparent-button:active {
+        box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3); /* Меньше тени при нажатии */
+    }
+/* Растягивает див по высоте */
+.d-flex {
+    display: flex;
+    height: 100%; /* Устанавливаем высоту контейнера равной 100% */
+}
+
+.align-items-stretch {
+    align-items: stretch; /* Это свойство позволит кнопкам растягиваться по высоте родительского контейнера */
+}
+
+.oval-button {
+    flex-grow: 1; /* Это позволяет кнопкам расти и заполнять доступную ширину */
+    height: 100%; /* Кнопки растягиваются по высоте контейнера */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; /* Размер шрифта можно настроить */
+}
+
+    /* Чтобы элементы внутри кнопки (иконки и текст) располагались по центру */
+    .oval-button i {
+        margin-right: 8px; /* Отступ между иконкой и текстом */
+    }
+

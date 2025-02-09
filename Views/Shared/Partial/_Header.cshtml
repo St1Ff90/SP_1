@@ -1,0 +1,17 @@
+﻿<header>
+  
+    <div class="logo" onclick="goToHomePage()">
+        <button class="icon-button">
+            <img src="~/images/home.png" alt="Icon">
+        </button>
+    </div>
+    <div>
+        @Html.Partial("~/Views/Shared/_LoginPartial.cshtml")
+    </div>
+    <div class="navbar">
+       
+        <button class="icon-button">
+            <a asp-area="" asp-controller="Home" asp-action="Login"> <img src="~/images/login.png" alt="Icon"></a>
+        </button>
+    </div>
+</header>

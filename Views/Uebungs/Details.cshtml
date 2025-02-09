@@ -1,0 +1,48 @@
+﻿@model SP.Models.Unterrichten.Uebung
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Uebung</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Unterthema)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Unterthema.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Aufgabe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Aufgabe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Frame)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Frame)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Antworten)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Antworten)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

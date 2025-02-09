@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/Layouts/_LayoutAufgaben.cshtml";
+
+}
+<div class="sidebar">
+    <!-- Ваш HTML-контент -->
+
+    <form asp-action="ExtraTasks" asp-controller="Lehrer" method="post">
+        <input type="hidden" id="vol" name="vol" value="" />
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-2 sidebar">
+                <button class="btn btn-icon btn-block" onclick="goBack()" title="Вернуться">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="btn btn-icon btn-block" onclick="showImage('grammar.jpg')" title="Грамматика">
+                    <i class="fas fa-book"></i>
+                </button>
+                <button class="btn btn-icon btn-block" onclick="showContent('content1.html')" title="Задание 1">1</button>
+                <button class="btn btn-icon btn-block" onclick="showContent('content2.html')" title="Задание 2">2</button>
+                <button class="btn btn-icon btn-block" onclick="showContent('content3.html')" title="Задание 3">3</button>
+                <button class="btn btn-icon btn-block" onclick="showContent('content4.html')" title="Задание 4">4</button>
+                <button class="btn btn-icon btn-block" onclick="showContent('content5.html')" title="Задание 5">5</button>
+                <button class="btn btn-icon btn-block" onclick="setRoleAndSubmit('extraTasks.html')" title="Дополнительные задания">
+                    <i class="fas fa-lightbulb"></i>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+<div class="content">
+    <h1>German Exercise</h1>
+    @* <p>Drag and drop the words into the correct blanks. If the placement is correct, the background will turn green; otherwise, it will turn red.</p>
+    <div class="exercise">
+    <div class="question" data-answer="Verhalten">
+    10. Sie hat vor ihrem Sohn schlecht über ihre Schwiegertochter gesprochen. So ein <div class="drop-zone"></div> finde ich unverschämt.
+    </div>
+    <div class="question" data-answer="großzügig">
+    11. Er hat das ganze Kollegium ins Restaurant eingeladen, er war wirklich <div class="drop-zone"></div>.
+    </div>
+    <div class="question" data-answer="cholerisch">
+    12. Das Kind schrie <div class="drop-zone"></div>, weil es die Süßigkeiten an der Supermarktkasse haben wollte.
+    </div>
+    <div class="question" data-answer="regt sich auf">
+    13. Sie <div class="drop-zone"></div> heute über jede Kleinigkeit, sie ist total gereizt.
+    </div>
+    <div class="question" data-answer="sich verhalten">
+    14. Er hat meines Erachtens keinen Fehler gemacht und <div class="drop-zone"></div> völlig korrekt.
+    </div>
+    <div class="question" data-answer="Gegensatz">
+    15. Im <div class="drop-zone"></div> zu seiner Frau ist er eher ein ruhiger Typ.
+    </div>
+    <div class="question" data-answer="mangelt an">
+    16. Sie hat beruflich keinen Erfolg. Es <div class="drop-zone"></div> ihr völlig an Ehrgeiz und Fleiß.
+    </div>
+    <div class="question" data-answer="sich verändert">
+    17. Seit seiner Scheidung hat <div class="drop-zone"></div> Klaus sehr <div class="drop-zone"></div>, findest du nicht?
+    </div>
+    </div>
+    <div class="word-bank">
+    <p>Words to drag:</p>
+    <div class="word">Verhalten</div>
+    <div class="word">großzügig</div>
+    <div class="word">cholerisch</div>
+    <div class="word">regt sich auf</div>
+    <div class="word">sich verhalten</div>
+    <div class="word">Gegensatz</div>
+    <div class="word">mangelt an</div>
+    <div class="word">sich verändert</div>
+    </div> *@
+    <div style="width: 100%; height: 80vh; display: flex; justify-content: center; align-items: center;">
+        <iframe style="width: 100%; height: 100%; max-height: 80vh;" src="https://wordwall.net/embed/play/84291/100/673" width="500" height="380" frameborder="0" allowfullscreen></iframe>
+        @*  <iframe style="max-width:100%" src="https://wordwall.net/uk/embed/831ccd45daea4f8088afceb65d2b0207?themeId=1&templateId=3&fontStackId=0" width="800" height="500" frameborder="0" allowfullscreen></iframe> *@
+    </div>
+</div>
+

@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Добро пожаловать";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Приветственный текст -->
+<div class="text-center">
+    <!--<h3 class="mb-4">Добро пожаловать на платформу обучения!</h3> -->
+
+    <form method="get">
+        <input type="button" class="oval-button btn-primary font-weight-bold mx-3" value="Вчитель" onclick="location.href='@Url.Action("SaveUser", new{role = "Lehrer"})'" />
+    </form>
+
+    <!-- Форма для передачи данных -->
+@*     <form method="post">
+        <input type="button" class="oval-button btn-primary font-weight-bold mx-3" value="Менеджер" onclick="location.href='@Url.Action("SaveUser", new{role = "вывыв"})'" />
+
+        <input type="hidden" id="role" name="role" value="" /> <!-- Скрытое поле для роли пользователя -->
+        <!-- Кнопки для выбора роли -->
+        <div class="d-flex justify-content-center align-items-stretch">
+            <button type="button" class="oval-button btn-primary font-weight-bold mx-3" onclick="setRoleAndSubmit('Manager')"><i class="fas fa-user-tie"></i>  Менеджер</button>
+            <button type="button" class="oval-button  btn-success font-weight-bold mx-3" onclick="setRoleAndSubmit('Student')"><i class="fas fa-user-graduate"></i>  Учень</button>
+            <button type="button" class="oval-button  btn-warning font-weight-bold mx-3" onclick="setRoleAndSubmit('Lehrer')"><i class="fas fa-chalkboard-teacher"></i>  Вчитель</button>
+        </div>
+    </form> *@
+</div>
+<div class="slider">
+    <button class="arrow left" onclick="prevSlide()">&#9664;</button>
+    <div class="slides" id="slides">
+        <div class="slide" onclick="setRoleAndSubmit('Manager')">
+            <img src="~/images/manager.jpg" alt="manager">
+        </div>
+        <div class="slide" onclick="setRoleAndSubmit('Lehrer')">
+            <img src="~/images/lehrer.jpg" alt="lehrer">
+        </div>
+        <div class="slide" onclick="setRoleAndSubmit('Student')">
+            <img src="~/images/student.jpg" alt="student">
+        </div>
+        <div class="slide">
+            <a href="page2.html"><img src="~/images/lehrer.jpg" alt="lehrer"></a>
+        </div>
+        <div class="slide">
+            <a href="page3.html"><img src="~/images/student.jpg" alt="student"></a>
+        </div>
+    </div>
+    <button class="arrow right" onclick="nextSlide()">&#9654;</button>
+</div>
+

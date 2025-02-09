@@ -1,0 +1,126 @@
+﻿body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #ffc107; /* Желтый фон */
+    color: black;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .sidebar button {
+        margin-bottom: 15px;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .sidebar button i {
+            font-size: 25px;
+        }
+
+.content {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.sidebar button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon {
+    background-color: white;
+    color: #ffc107;
+    border: 2px solid #ffc107;
+}
+
+.exercise {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.drop-zone {
+    border: 1px dashed #aaa;
+    padding: 5px 10px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+    margin-top: 5px;
+    min-height: 30px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.word {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    transition: opacity 0.3s;
+}
+
+.correct {
+    background-color: #8f8;
+}
+
+.incorrect {
+    background-color: #f88;
+}
+
+.word.dragging {
+    opacity: 0.5;
+}
+
+.drop-zone.hover {
+    border-color: #ffc107;
+    background-color: #ffeb99;
+}
+
+.word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+    .word-bank p {
+        width: 100%;
+    }
+.content {
+    background: #f0f0f0;
+}

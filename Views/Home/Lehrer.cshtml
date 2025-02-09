@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Lehrer";
+ 
+    Layout = "~/Views/Shared/Layouts/_LayoutLehrer.cshtml";
+
+}
+
+<div class="sidebar">
+    <!-- Форма для передачи данных -->
+    <form asp-action="Index" asp-controller="Themen" method="post">
+        <input type="hidden" id="vol" name="vol" value="" /> <!-- Скрытое поле для роли пользователя -->
+        <!-- Кнопки для выбора роли -->
+        
+            <!-- Овальные кнопки -->
+            <button class="oval-button students" onclick="setAufgabeAndSubmit('Students')">Учні</button>
+            <button class="oval-button schedule" onclick="setAufgabeAndSubmit('StundenPlan')">Розклад</button>
+            <button class="oval-button deutsch" onclick="setAufgabeAndSubmit('Deutsch')">Deutsch</button>
+    </form>
+</div>
+<!-- Основной контент -->
+<div class="content">
+    <h1>Добро пожаловать, учитель!</h1>
+</div>
+
+
+

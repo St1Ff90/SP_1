@@ -1,0 +1,13 @@
+﻿/* Стиль текста */
+.fairy-tale-text {
+    font-family: 'Poppins', 'Times New Roman', serif; /* Сказочные шрифты */
+    font-size: 48px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    text-transform: uppercase; /* Прописные буквы */
+    text-align: center; /* Центрирование текста */
+    background: linear-gradient(90deg, #FFD700, #FF8C00); /* Градиент желто-оранжевого цвета */
+    -webkit-background-clip: text; /* Применение градиента к тексту */
+    -webkit-text-fill-color: transparent; /* Делаем фон текста прозрачным */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Легкая тень для волшебного эффекта */
+    margin: 20px 0;
+}

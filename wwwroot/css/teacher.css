@@ -1,0 +1,100 @@
+﻿
+/* Main: для sidebar и content */
+.main {
+    display: flex;
+    align-items: stretch; /* Растягиваем элементы до одинаковой высоты */
+    flex: 1; /*Заполняет оставшееся пространство между header и footer */
+    width: 100%;
+    height: 100%; /* Занимает всю высоту родителя */
+}
+
+
+/* Стили для бокового меню */
+.sidebar {
+    background-color: #003366; /* Темно-синий цвет */
+    width: 10%; /* Боковая панель занимает 10% ширины */
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Равномерно распределяем кнопки */
+    height: 100%; /* Занимает всю высоту родителя */
+    padding: 10px 5px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-height: 100vh; /* Минимальная высота равна высоте экрана */
+}
+
+    .sidebar h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .sidebar button {
+        background-color: #ffcc00; /* Желтый цвет кнопок */
+        color: #003366; /* Темно-синий текст */
+        border: none;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 90%;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+        .sidebar button:hover {
+            background-color: #ffc107; /* Более яркий желтый при наведении */
+            transform: scale(1.05); /* Легкое увеличение кнопки */
+        }
+
+/* Стили для фоновой картинки */
+/*.content {
+    flex: 1;*/ /*Занимает оставшуюся ширину */
+/*background-color: #e0e0e0;
+    padding: 10px;
+    height: 100%;*/ /*Занимает всю высоту родителя */
+/*flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}*/
+
+.content {
+    /*flex: 1;*/ /*Занимает оставшуюся ширину */
+    flex-grow: 1; /* Остаток ширины занимает контент */
+    background-color: #e0e0e0;
+    padding: 10px;
+    height: 100%; /* Занимает всю высоту родителя*/
+    flex-grow: 1;
+    background: url('/images/lehrer.jpg') no-repeat center center; /* Замените 'background.jpg' на имя вашей картинки */
+    background-size: cover; /* Задает размер картинки по ширине экрана */
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Минимальная высота равна высоте экрана */
+}
+
+    /* Размытый слой поверх фоновой картинки */
+    .content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.5); /*Белая полупрозрачная маска */
+        backdrop-filter: blur(8px); /* Эффект размытия */
+        z-index: -1;
+    }
+
+    /* Текстовый приветственный контент */
+    .content h1 {
+        color: #ffffff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        font-size: 36px;
+        text-align: center;
+        /*margin-top: 20%;*/
+    }

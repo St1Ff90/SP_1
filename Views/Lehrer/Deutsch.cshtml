@@ -1,0 +1,171 @@
+﻿@model Sprache.Models.model.clsDeutschContentLibrary
+@{
+    ViewData["Title"] = "Deutsch";
+
+}
+<div class="container-fluid">
+    <div class="fairy-tale-text">
+        <div class="filter-container">
+            <!-- Фильтры -->
+            <div class="filter-group">
+                <label for="category">Категория:</label>
+                <select id="category" name="category">
+                    <option value="Wortschatz">Wortschatz</option>
+                    <option value="Grammatik">Grammatik</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="level">Уровень:</label>
+                <select id="level" name="level">
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="book">Книга:</label>
+                <select id="book" name="book">
+                    <option value="Book1">Книга 1</option>
+                    <option value="Book2">Книга 2</option>
+                    <option value="Book3">Книга 3</option>
+                </select>
+            </div>
+
+            <!-- Кнопки -->
+            <div class="filter-buttons">
+                <button type="submit" class="button-blue">Применить</button>
+                <button type="reset" class="button-green">Очистить</button>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        @using (Html.BeginForm("Aufgaben", "Lehrer", FormMethod.Post))
+        {
+            @* <form asp-action="Aufgaben" asp-controller="Lehrer" method="post"> *@
+            <input type="hidden" id="vol" name="vol" value="" />
+            <table>
+                <!-- Шапка таблицы -->
+                <thead>
+                    <tr>
+                        @* <th></th> *@ <!-- Пустая шапка 1 -->
+                        <th style="width: 50%;">Themen</th> <!-- Пустая шапка 2 -->
+                        <th style="width: 5%;">A1</th>
+                        <th style="width: 5%;">A2</th>
+                        <th style="width: 5%;">B1</th>
+                        <th style="width: 5%;">B2</th>
+                        <th style="width: 5%;">C1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Блок Grammatik -->
+                    <tr>
+                       @*  <td rowspan="@(Model.Grammatik.Count+1)" class="align-middle vertical-text students">Grammatik</td> *@
+                    </tr>
+                    @foreach (var currCode in @Model.Grammatik)
+                    {
+                        <tr>
+                            <td>@currCode[0]</td>
+                            <td>
+                                @if (currCode[1] != null && currCode[1] != "")
+                                {
+                                    <button type="button" class="btn btn-danger" onclick="setAufgabeAndSubmit('@currCode[1]@currCode[0]')">
+                                        <i>@currCode[1]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[2] != null && currCode[2] != "")
+                                {
+                                    <button type="button" class="btn btn-danger" onclick="setAufgabeAndSubmit('@currCode[2]@currCode[0]')">
+                                        <i>@currCode[1]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[3] != null && currCode[3] != "")
+                                {
+                                    <button type="button" class="btn btn-danger" onclick="setAufgabeAndSubmit('@currCode[3]@currCode[0]')">
+                                        <i>@currCode[1]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[4] != null && currCode[4] != "")
+                                {
+                                    <button type="button" class="btn btn-danger" onclick="setAufgabeAndSubmit('@currCode[4]@currCode[0]')">
+                                        <i>@currCode[1]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[5] != null && currCode[5] != "")
+                                {
+                                    <button type="button" class="btn btn-danger" onclick="setAufgabeAndSubmit('@currCode[5]@currCode[0]')">
+                                        <i>@currCode[1]</i>
+                                    </button>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                    <!-- Блок Wortschatz -->
+                    <tr>
+                       @*  <td rowspan="@(Model.Wortschatz.Count+1)" class="align-middle vertical-text">Wortschatz</td> *@
+                    </tr>
+                    @foreach (var currCode in @Model.Wortschatz)
+                    {
+                        <tr>
+                            <td>@currCode[0]</td>
+                            <td>
+                                @if (currCode[1] != null)
+                                {
+                                    <button type="button" class="btn btn-success" onclick="setAufgabeAndSubmit('@currCode[1]@currCode[0]')">
+                                        <i>@currCode[1]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[2] != null)
+                                {
+                                    <button type="button" class="btn btn-success" onclick="setAufgabeAndSubmit('@currCode[2]@currCode[0]')">
+                                        <i>@currCode[2]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[3] != null)
+                                {
+                                    <button type="button" class="btn btn-success" onclick="setAufgabeAndSubmit('@currCode[3]@currCode[0]')">
+                                        <i>@currCode[3]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[4] != null)
+                                {
+                                    <button type="button" class="btn btn-success" onclick="setAufgabeAndSubmit('@currCode[4]@currCode[0]')">
+                                        <i>@currCode[4]</i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                @if (currCode[5] != null)
+                                {
+                                    <button type="button" class="btn btn-success" onclick="setAufgabeAndSubmit('@currCode[5]@currCode[0]')">
+                                        <i>@currCode[5]</i>
+                                    </button>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
